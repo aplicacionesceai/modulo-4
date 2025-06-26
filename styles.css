@@ -1,13 +1,13 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #e8f5e9;
   padding: 20px;
   margin: 0;
 }
 
 h1 {
-  color: #0a3d62;
+  color: #006644;
   text-align: center;
 }
 
@@ -15,16 +15,16 @@ form {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 label, legend {
   display: block;
   margin-top: 15px;
   font-weight: bold;
-  color: #2d3436;
+  color: #004d40;
 }
 
 input[type="text"], textarea {
@@ -32,7 +32,7 @@ input[type="text"], textarea {
   padding: 8px;
   margin-top: 5px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 input[type="radio"], input[type="checkbox"] {
@@ -49,7 +49,7 @@ button {
   margin-top: 20px;
   margin-right: 10px;
   padding: 10px 20px;
-  background-color: #218c74;
+  background-color: #009664;
   color: white;
   border: none;
   border-radius: 5px;
@@ -57,5 +57,5 @@ button {
 }
 
 button:hover {
-  background-color: #1e6f5c;
+  background-color: #007850;
 }
