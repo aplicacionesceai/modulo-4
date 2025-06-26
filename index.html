@@ -3,184 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#008751">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="favicon.ico">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="theme-color" content="#008751"/>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>Módulo 4 - Observación de Zonas Comunes</title>
+  <title>Módulo 4 - Observación Zonas Comunes</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main>
-    <h1>Módulo 4: Observación de Zonas Comunes y Unidades Productivas</h1>
-    <form id="form-zonas">
+  <h1>Módulo 4: Observación de Zonas Comunes y Unidades Productivas</h1>
+  <form id="modulo4-form">
+    <fieldset>
+      <legend>Tipo de espacio observado:</legend>
+      <label><input type="radio" name="tipo_espacio" value="Zona común" required> Zona común</label>
+      <label><input type="radio" name="tipo_espacio" value="Unidad productiva"> Unidad productiva</label>
+      <label><input type="radio" name="tipo_espacio" value="Otro"> Otro: <input type="text" name="tipo_espacio_otro"></label>
+    </fieldset>
 
-      <p><strong>1. Tipo de espacio observado:</strong></p>
-      <select name="tipo_espacio" required>
-        <option value="">Seleccione...</option>
-        <option value="Zona común">Zona común</option>
-        <option value="Unidad productiva">Unidad productiva</option>
-        <option value="Otro">Otro</option>
-      </select>
-      <input type="text" name="otro_espacio" placeholder="Otro (especifique)">
+    <label>Nombre del espacio:<input type="text" name="nombre_espacio"></label>
+    <label>Ubicación o punto de referencia:<input type="text" name="ubicacion"></label>
 
-      <p><strong>2. Nombre del espacio:</strong></p>
-      <input type="text" name="nombre_espacio">
-
-      <p><strong>3. Ubicación o punto de referencia:</strong></p>
-      <input type="text" name="ubicacion">
-
-      <p><strong>4. ¿Está actualmente en funcionamiento?</strong></p>
-      <label><input type="radio" name="funcionamiento" value="Sí" required> Sí</label><br>
-      <label><input type="radio" name="funcionamiento" value="Parcialmente"> Parcialmente</label><br>
+    <fieldset>
+      <legend>¿Está actualmente en funcionamiento?</legend>
+      <label><input type="radio" name="funcionamiento" value="Sí"> Sí</label>
+      <label><input type="radio" name="funcionamiento" value="Parcialmente"> Parcialmente</label>
       <label><input type="radio" name="funcionamiento" value="No"> No</label>
+    </fieldset>
 
-      <p><strong>5. Estado físico general:</strong></p>
-      <label><input type="radio" name="estado_fisico" value="Bueno" required> Bueno</label><br>
-      <label><input type="radio" name="estado_fisico" value="Regular"> Regular</label><br>
-      <label><input type="radio" name="estado_fisico" value="Malo"> Malo</label>
-
-      <p><strong>6. ¿Cuenta con acceso a energía eléctrica?</strong></p>
-      <label><input type="radio" name="energia" value="Estable" required> Sí, conexión estable</label><br>
-      <label><input type="radio" name="energia" value="Intermitente"> Sí, intermitente</label><br>
-      <label><input type="radio" name="energia" value="No tiene"> No tiene acceso</label><br>
-      <label><input type="radio" name="energia" value="Fuente alternativa"> Usa fuente alternativa</label>
-
-      <p><strong>7. Tipo de instalación eléctrica:</strong></p>
-      <label><input type="radio" name="instalacion" value="Formal" required> Formal y protegida</label><br>
-      <label><input type="radio" name="instalacion" value="Improvisada"> Improvisada o parcial</label><br>
-      <label><input type="radio" name="instalacion" value="No se observan"> No se observan</label>
-
-      <p><strong>8. Equipos eléctricos presentes:</strong></p>
-      <label><input type="checkbox" name="equipos" value="Iluminación interior"> Iluminación interior</label><br>
-      <label><input type="checkbox" name="equipos" value="Iluminación exterior"> Iluminación exterior</label><br>
-      <label><input type="checkbox" name="equipos" value="Ventiladores"> Ventiladores</label><br>
-      <label><input type="checkbox" name="equipos" value="Computadores"> Computadores o tablets</label><br>
-      <label><input type="checkbox" name="equipos" value="Refrigerador"> Refrigerador / congelador</label><br>
-      <label><input type="checkbox" name="equipos" value="Bombeo"> Sistema de bombeo</label><br>
-      <label><input type="checkbox" name="equipos" value="Máquina productiva"> Máquina productiva</label><br>
-      <label><input type="checkbox" name="equipos" value="No tiene"> No tiene equipos</label><br>
-      <label><input type="checkbox" name="equipos" value="Otro"> Otro</label>
-
-      <p><strong>9. Uso principal del espacio:</strong></p>
-      <label><input type="radio" name="uso" value="Educativo" required> Educativo</label><br>
-      <label><input type="radio" name="uso" value="Comunitario"> Comunitario / social</label><br>
-      <label><input type="radio" name="uso" value="Salud"> Salud</label><br>
-      <label><input type="radio" name="uso" value="Deporte"> Deporte / Entretenimiento</label><br>
-      <label><input type="radio" name="uso" value="Producción"> Producción agropecuaria</label><br>
-      <label><input type="radio" name="uso" value="Transformación"> Transformación de alimentos</label><br>
-      <label><input type="radio" name="uso" value="Otro"> Otro</label>
-
-      <p><strong>10. Necesidades prioritarias:</strong></p>
-      <label><input type="checkbox" name="necesidades" value="Acceso a energía"> Acceso a energía eléctrica</label><br>
-      <label><input type="checkbox" name="necesidades" value="Mejoras eléctricas"> Mejoras en instalación eléctrica</label><br>
-      <label><input type="checkbox" name="necesidades" value="Iluminación adecuada"> Iluminación adecuada</label><br>
-      <label><input type="checkbox" name="necesidades" value="Equipos"> Equipos productivos o educativos</label><br>
-      <label><input type="checkbox" name="necesidades" value="Mantenimiento"> Mantenimiento general</label><br>
-      <label><input type="checkbox" name="necesidades" value="Capacitación"> Capacitación</label><br>
-      <label><input type="checkbox" name="necesidades" value="Otro"> Otro</label>
-
-      <p><strong>11. ¿Se generan residuos orgánicos o biomasa?</strong></p>
-      <label><input type="checkbox" name="residuos" value="Restos de cultivos"> Restos de cultivos</label><br>
-      <label><input type="checkbox" name="residuos" value="Desechos de alimentos"> Desechos de alimentos</label><br>
-      <label><input type="checkbox" name="residuos" value="Estiércol"> Estiércol de animales</label><br>
-      <label><input type="checkbox" name="residuos" value="Residuos de poda"> Residuos de poda o madera</label><br>
-      <label><input type="checkbox" name="residuos" value="Residuos de pescado"> Residuos de pescado</label><br>
-      <label><input type="checkbox" name="residuos" value="Otros"> Otros</label><br>
-      <label><input type="checkbox" name="residuos" value="No"> No se generan</label>
-
-      <p><strong>12. ¿Cuenta con techo solar o sería adecuado instalar uno?</strong></p>
-      <label><input type="radio" name="techo_solar" value="Sí" required> Sí</label><br>
-      <label><input type="radio" name="techo_solar" value="No"> No</label><br>
-      <label><input type="radio" name="techo_solar" value="No aplica"> No aplica</label>
-
-
-      <p><strong>13. ¿Cuál es la cantidad aproximada de estos residuos por semana o mes?</strong></p>
-      <input type="text" name="cantidad_residuos" placeholder="Ej: 50 kg, 2 sacos, etc.">
-      <p><strong>14. ¿Qué uso actual se le da a esos residuos?</strong></p>
-      <label><input type="checkbox" name="uso_residuos" value="Se desechan"> Se desechan</label><br>
-      <label><input type="checkbox" name="uso_residuos" value="Se compostan"> Se compostan</label><br>
-      <label><input type="checkbox" name="uso_residuos" value="Se utilizan para alimentar animales"> Se utilizan para alimentar animales</label><br>
-      <label><input type="checkbox" name="uso_residuos" value="Se queman"> Se queman</label><br>
-      <label><input type="checkbox" name="uso_residuos" value="Otro"> Otro</label>
-
-      <p><strong>15. ¿Existe infraestructura disponible con techos aptos para instalación de paneles solares?</strong></p>
-      <label><input type="radio" name="infraestructura_techos" value="Sí" required> Sí</label><br>
-      <label><input type="radio" name="infraestructura_techos" value="No"> No</label><br>
-      <label><input type="radio" name="infraestructura_techos" value="Parcialmente"> Parcialmente</label>
-
-      <p><strong>16. Área estimada de techo disponible (m²):</strong></p>
-      <input type="text" name="area_techo">
-
-      <p><strong>17. ¿La zona recibe buena radiación solar directa al menos 5 horas al día?</strong></p>
-      <label><input type="radio" name="radiacion_solar" value="Sí" required> Sí</label><br>
-      <label><input type="radio" name="radiacion_solar" value="No"> No</label><br>
-      <label><input type="radio" name="radiacion_solar" value="No se pudo verificar"> No se pudo verificar</label>
-
-      <p><strong>18. Observaciones adicionales sobre potencial energético en el espacio observado:</strong></p>
-      <textarea name="observaciones_energia" rows="4" cols="50" placeholder="Escriba aquí..."></textarea>
-
-
-
-    <p>
-        <label>
-          <input type="checkbox" name="autorizacion_datos" required>
-          Acepto el tratamiento de mis datos personales según la Ley 1581 de 2012 y su decreto reglamentario 1377 de 2013.
-        </label>
-    </p>
+    <!-- Más campos se agregan en siguiente bloque -->
 
     
-      <div class="buttons">
-        <button type="submit">Guardar observación</button>
-        <button type="button" id="btn-exportar">Finalizar y exportar</button>
-      </div>
-    </form>
-    <section id="lista-observaciones"></section>
-  </main>
-  
+<fieldset>
+  <legend>¿Cuál es el estado físico general de la infraestructura?</legend>
+  <label><input type="radio" name="estado_fisico" value="Bueno"> Bueno</label>
+  <label><input type="radio" name="estado_fisico" value="Regular"> Regular</label>
+  <label><input type="radio" name="estado_fisico" value="Malo"> Malo</label>
+</fieldset>
 
-  
+<fieldset>
+  <legend>¿Cuenta con acceso a energía eléctrica?</legend>
+  <label><input type="radio" name="acceso_energia" value="Sí, conexión estable"> Sí, conexión estable</label>
+  <label><input type="radio" name="acceso_energia" value="Sí, intermitente"> Sí, intermitente</label>
+  <label><input type="radio" name="acceso_energia" value="No tiene acceso"> No tiene acceso</label>
+  <label><input type="radio" name="acceso_energia" value="Usa fuente alternativa"> Usa fuente alternativa</label>
+</fieldset>
 
-  
+<fieldset>
+  <legend>¿Qué tipo de instalación eléctrica tiene?</legend>
+  <label><input type="radio" name="tipo_instalacion" value="Formal y protegida"> Formal y protegida</label>
+  <label><input type="radio" name="tipo_instalacion" value="Improvisada o parcial"> Improvisada o parcial</label>
+  <label><input type="radio" name="tipo_instalacion" value="No se observan instalaciones"> No se observan instalaciones</label>
+</fieldset>
 
-  
-  
-  
-  
+<fieldset>
+  <legend>¿Qué equipos eléctricos están presentes?</legend>
+  <label><input type="checkbox" name="equipos_presentes" value="Iluminación interior"> Iluminación interior</label>
+  <label><input type="checkbox" name="equipos_presentes" value="Iluminación exterior"> Iluminación exterior</label>
+  <label><input type="checkbox" name="equipos_presentes" value="Ventiladores"> Ventiladores</label>
+  <label><input type="checkbox" name="equipos_presentes" value="Computadores o tablets"> Computadores o tablets</label>
+  <label><input type="checkbox" name="equipos_presentes" value="Refrigerador / congelador"> Refrigerador / congelador</label>
+  <label><input type="checkbox" name="equipos_presentes" value="Sistema de bombeo"> Sistema de bombeo</label>
+  <label><input type="checkbox" name="equipos_presentes" value="Máquina productiva"> Máquina productiva</label>
+  <label><input type="checkbox" name="equipos_presentes" value="No tiene equipos"> No tiene equipos</label>
+  <label>Otro: <input type="text" name="equipos_presentes_otro"></label>
+</fieldset>
 
-  
-  
-  
-  
+<fieldset>
+  <legend>¿Cuál es el uso principal de este espacio?</legend>
+  <label><input type="radio" name="uso_principal" value="Educativo"> Educativo</label>
+  <label><input type="radio" name="uso_principal" value="Comunitario / social"> Comunitario / social</label>
+  <label><input type="radio" name="uso_principal" value="Salud"> Salud</label>
+  <label><input type="radio" name="uso_principal" value="Deporte y/o Entretenimiento"> Deporte y/o Entretenimiento</label>
+  <label><input type="radio" name="uso_principal" value="Producción agropecuaria"> Producción agropecuaria</label>
+  <label><input type="radio" name="uso_principal" value="Transformación de alimentos"> Transformación de alimentos</label>
+  <label>Otro: <input type="text" name="uso_principal_otro"></label>
+</fieldset>
 
-  
-  
-  
-  
+<fieldset>
+  <legend>¿Qué necesidades prioritarias se identifican?</legend>
+  <label><input type="checkbox" name="necesidades" value="Acceso a energía eléctrica"> Acceso a energía eléctrica</label>
+  <label><input type="checkbox" name="necesidades" value="Mejoras en instalación"> Mejoras en instalación</label>
+  <label><input type="checkbox" name="necesidades" value="Iluminación adecuada"> Iluminación adecuada</label>
+  <label><input type="checkbox" name="necesidades" value="Equipos productivos"> Equipos productivos</label>
+  <label><input type="checkbox" name="necesidades" value="Mantenimiento general"> Mantenimiento general</label>
+  <label><input type="checkbox" name="necesidades" value="Capacitación para uso del espacio"> Capacitación para uso del espacio</label>
+  <label>Otro: <input type="text" name="necesidades_otro"></label>
+</fieldset>
 
-  
-  
-  
-  
+<fieldset>
+  <legend>¿Se generan residuos orgánicos o biomasa?</legend>
+  <label><input type="checkbox" name="residuos" value="Restos de cultivos"> Restos de cultivos</label>
+  <label><input type="checkbox" name="residuos" value="Desechos de alimentos"> Desechos de alimentos</label>
+  <label><input type="checkbox" name="residuos" value="Estiércol de animales"> Estiércol de animales</label>
+  <label><input type="checkbox" name="residuos" value="Residuos de poda"> Residuos de poda</label>
+  <label><input type="checkbox" name="residuos" value="Residuos de pescado"> Residuos de pescado</label>
+  <label><input type="checkbox" name="residuos" value="No se generan"> No se generan</label>
+  <label>Otros: <input type="text" name="residuos_otro"></label>
+</fieldset>
 
-  <script src="indexedDB.js"></script>
-  <script src="main.js"></script>
-  <script src="export.js"></script>
-  
+<label>Cantidad aproximada de residuos (kg, m³, sacos):<input type="text" name="cantidad_residuos"></label>
+
+<fieldset>
+  <legend>¿Qué uso actual se le da a esos residuos?</legend>
+  <label><input type="checkbox" name="uso_residuos" value="Se desechan"> Se desechan</label>
+  <label><input type="checkbox" name="uso_residuos" value="Se compostan"> Se compostan</label>
+  <label><input type="checkbox" name="uso_residuos" value="Se utilizan para animales"> Se utilizan para animales</label>
+  <label><input type="checkbox" name="uso_residuos" value="Se queman"> Se queman</label>
+  <label>Otro: <input type="text" name="uso_residuos_otro"></label>
+</fieldset>
+
+<fieldset>
+  <legend>¿Infraestructura con techos para paneles solares?</legend>
+  <label><input type="radio" name="infra_techo" value="Sí"> Sí</label>
+  <label><input type="radio" name="infra_techo" value="No"> No</label>
+  <label><input type="radio" name="infra_techo" value="Parcialmente"> Parcialmente</label>
+</fieldset>
+
+<label>Área estimada de techo disponible (m²):<input type="text" name="area_techo"></label>
+
+<fieldset>
+  <legend>¿Buena radiación solar más de 5h al día?</legend>
+  <label><input type="radio" name="radiacion" value="Sí"> Sí</label>
+  <label><input type="radio" name="radiacion" value="No"> No</label>
+  <label><input type="radio" name="radiacion" value="No se pudo verificar"> No se pudo verificar</label>
+</fieldset>
+
+<label>Observaciones adicionales sobre potencial energético:<br>
+  <textarea name="observaciones_potencial" rows="4" cols="50"></textarea>
+</label>
+
+    <button type="submit">Guardar</button>
+    <button type="button" id="limpiar-btn">Limpiar</button>
+    <button type="button" id="exportar-btn">Exportar JSON</button>
+  </form>
+  <script src="script.js"></script>
 </body>
-
-
-
-
-
-
-
-
 </html>
